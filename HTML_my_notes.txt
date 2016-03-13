@@ -42,7 +42,42 @@ inline elements
 	<strong></strong>
 	<img>
 
-block elements - makes a box around 
+block elements - makes a box around, 
 	<p></p>
-	<div></div>
+	<div></div> - takes up the whole line
 	<form></form>
+
+CSS - display: flex; --> will make blocks in html stand one next to another
+
+IDs and Classes
+
+Id - unique identifier
+	-<div id="welcome">
+
+Class - groups many elements 
+	-if want to use a unique style for one element: 
+	<div class="floorboard creaks"> OR <div id="creaks" class="floorboard">
+
+Tips and Tricks
+
+helps with sizing issues:
+
+* {
+	box-sizing:border-box;
+}  
+
+helps visualize outlines 
+
+* {
+	outline: 1px solid black !important;
+}
+
+divs - block-level, takes up the whole line
+	-mainly used to group items together
+	-groups items together to be used in CSS
+
+
+span - inline-level, doesn't push things out
+	-doesn't affect layout of the page, 
+	-used to style a few elements together
+	-styles text
