@@ -1,12 +1,12 @@
 body {
   font-family: "Lucida Console", Monaco, monospace;
-  margin: 0, auto;
+  margin: 0 auto;
 }
 
 h1 {
-  text-align:center;
+  text-align: center;
   color: #2a322a;
-  border-radius:4px;
+  border-radius: 4px;
   
 }
 
@@ -19,7 +19,7 @@ h1 {
   background-color:#95b195;
   font-weight: lighter;
 	margin: 6px;
-  border-radius: border-radius: 0px;
+  border-radius: 0;
   padding: 20px;
   margin-left: 100px;
   display: block;
