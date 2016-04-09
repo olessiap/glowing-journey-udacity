@@ -119,5 +119,71 @@ print indent + inner_text
 print closing_tag
 
 
+#### FUNCTIONS #####
 
-# your code here
+def say_hello(name):
+	greeting = "Hello " + name + "!"
+	return greeting
+
+print say_hello("Mariam")
+print say_hello("Andy")
+
+###print udacity###
+
+def rest_of_string(s):
+	return s[1:]
+
+print rest_of_string('Dudacity')
+
+
+#### sum does nothing ###
+
+def sum(a,b):
+	print "enter sum!"
+	print "a is", a
+	a = a + b
+	print "a is", a
+	#return a // returns 3
+
+print sum (1,2)
+
+
+### function that prints Hello World ###
+
+def some_function():
+	print "Hello World!"
+
+some_function() ## 'calling' the function
+
+### function 'square' that takes a number and outputs its square  ###
+
+def square(n):
+	return n * n
+
+print square(5)
+#>>>25
+
+### take 3 inputs and return their sum ###
+
+def sum3(a, b, c):
+	return a + b + c
+
+print sum3(1,2,3)
+#>>>6
+
+### function abbaize that takes 3 strings as inputs and outputs a string that is the first input,
+###followed by 2 repetitions of the second input, followed by the first input
+
+def abbaize(a,b):
+	return a + b + b + a
+
+print abbaize('a', 'b')
+#>>>abba
+
+### define function that takes a string input and outputs a string with uppercase 'U'
+###followed by the input stirng
+
+def udacity(s):
+	return 'U' + s
+
+print udacity('daman')
