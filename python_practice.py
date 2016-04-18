@@ -187,3 +187,63 @@ def udacity(s):
 	return 'U' + s
 
 print udacity('daman')
+
+
+########### IF STATEMENTS #############
+
+## function that takes 2 numbers as inputs & outputs the greater of the 2 inputs
+
+def bigger(a, b):
+	if a > b:
+		return a
+
+	else:
+		return b
+
+print bigger(2,7)
+#>>>7
+
+### define a procedure that takes a string and returns a Boolean
+### indicating if the input string is a friend.
+### Only friends with names that start with D
+
+def is_friend(name):
+	if name[0] == 'D':    ## return name [0] == 'D' /// instead of is/else is the same thing
+		return True
+	else:
+		return False
+
+print is_friend('Diane')
+#>>>True
+
+## ### define a procedure that takes a string and returns a Boolean
+### indicating if the input string is a friend.
+### Only friends with names that start with D or N
+
+def is_friend(name):
+	if name[0] == 'D' or name[0] == 'N':
+		return True
+	else:
+		return False
+
+print is_friend('Nora')
+print is_friend('Zoe')
+
+# Define a procedure, biggest, that takes three
+# numbers as inputs and returns the largest of
+# those three numbers.
+
+def biggest(number1, number2, number3):
+	if number1 > number2:
+		return number1
+	else:
+		return number3
+	if number2 > number3:
+		return number2
+	if number3 > number1:
+		return number3
+
+print biggest(3, 6, 9)
+#>>> 9
+print biggest(9, 3, 6)
+#>>> 9
