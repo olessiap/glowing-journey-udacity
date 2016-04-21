@@ -247,3 +247,46 @@ print biggest(3, 6, 9)
 #>>> 9
 print biggest(9, 3, 6)
 #>>> 9
+
+###### WHILE LOOPS #####
+
+i = 0
+while i !=10:
+	i = i + 1
+	print i
+
+## forever loop ##
+
+#i = 1
+#while i !=10:
+	#i = i + 2
+	#print i 
+
+## loop with a counting variable 
+
+i = 0
+while i < 10:
+	print i
+	i = i + 1
+
+#while loops that removes all spaces from a string
+
+def remove_spaces(text):
+	text_without_spaces = '' # empty string for now
+	while text != '':
+		next_character = text[0]
+		if next_character != ' ': # single sapce
+			text_without_spaces = text_without_spaces + next_character
+		text = text[1:]
+	return text_without_spaces
+print remove_spaces("hello my name is Olessia")
+
+### print numbers from 1 to n
+
+def print_numbers(n):
+	i = 1 # if i = 0
+	while i <= n: # i < n
+   		print i # i = i + 1
+   		i = i + 1 # print 1
+
+print_numbers(3)
