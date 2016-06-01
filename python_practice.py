@@ -290,3 +290,109 @@ def print_numbers(n):
    		i = i + 1 # print 1
 
 print_numbers(3)
+
+#### Define a procedure weekend which takes a string as its input, and
+### returns the boolean True if it's 'Saturday' or 'Sunday' and False otherwise.
+
+def weekend(day):
+	if day =="Saturday" or day == "Sunday":
+		return True
+	else:
+		return False
+
+print weekend("Saturday")
+print weekend("Tuesday")
+
+###Define a procedure, countdown, that takes a positive whole number as its input
+### and prints out a countdown form that number to 1, followed by Blastoff!
+
+def countdown(n):
+	while n >= 1:
+		print n
+		n = n - 1
+	print 'Blastoff!'
+
+print countdown(3)
+
+### to generate a random noun using randit
+### define a procedure random_noun that picks a number from 0-1
+### and outputs a noun depending on which number 0= sofa 1=llama
+
+##from random import randit
+def random_noun():
+	random_num = randit(0,1)
+	if random_num == 0:
+		return "Sofa"
+	else:
+		return "llama"
+
+print random_noun
+
+
+# Write code for the function word_transformer, which takes in a string word as input. 
+# If word is equal to "NOUN", return a random noun, if word is equal to "VERB", 
+# return a random verb, else return the first character of word. 
+
+##from random import randit
+
+#def random_noun():
+#	random_num = randit(0,1)
+#	if random_num == 0:
+#		return "rabbit"
+#	else:
+#		return "jackass"
+#
+#def random_verb():
+#	random_num = randit(0, 1)
+#	if random_num == 0:
+#		return "run"
+#	else:
+#		return "swim"
+#
+#def word_transformer(word):
+#	if word == "NOUN":
+#		return random_noun
+#	if word == "VERB":
+#		return random_verb
+#	else:
+#		return word[0]
+
+#print('cat')
+
+##from random import randit
+
+#def random_noun():
+#	random_num = randit(0,1)
+#	if random_num == 0:
+#		return "rabbit"
+#	else:
+#		return "jackass"
+#
+#def random_verb():
+#	random_num = randit(0, 1)
+#	if random_num == 0:
+#		return "run"
+#	else:
+#		return "swim"
+#
+#def word_transformer(word):
+#	if word == "NOUN":
+#		return random_noun
+#	if word == "VERB":
+#		return random_verb
+#	else:
+#		return word[0]
+
+def process_madlib(madlib):
+	processed = ""
+	index = 0
+	box_length = 4
+	while index < len(madlib):
+		frame = madlib[index:index+box_length]
+		to_add = word_transformer(frame)
+		processed += to_add
+		if len(to_add) == 1:
+			index += 1
+		else:
+			index += 4
+	return processed 	
