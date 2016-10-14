@@ -181,3 +181,4 @@ def abbaize (a, b):
     return a + b * 2 + a
 
 print abbaize ('a', 'b')
+#>>>abba
