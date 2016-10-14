@@ -119,7 +119,7 @@ print indent + inner_text
 print closing_tag
 
 
-#### FUNCTIONS #####
+####################### FUNCTIONS #######################
 
 def say_hello(name):
 	greeting = "Hello " + name + "!"
@@ -170,3 +170,14 @@ def sum3(a, b, c):
 
 print sum3(1,2,3)
 #>>>6
+
+### procedure, ABBAIZE that takes 2 strings as inputs
+### and outputs a string
+### that is the first input,
+### followed by 2 repititions of the second input
+### followed by first input
+
+def abbaize (a, b):
+    return a + b * 2 + a
+
+print abbaize ('a', 'b')
