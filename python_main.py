@@ -181,3 +181,53 @@ def abbaize (a, b):
     return a + b * 2 + a
 
 print abbaize ('a', 'b')
+#>>> abba
+
+#### def udacify
+### takes string input
+### outpus string with uppercase "U" followed by the input string
+
+def udacify (s):
+    return 'U' + s
+
+print udacify('dacity')
+#>>> Udacity
+
+#### IF STATEMENTS ######
+
+# Define a procedure, bigger, that takes in
+# two numbers as inputs, and returns the
+# greater of the two inputs.
+
+def bigger (a, b):
+    if a > b:
+        return a
+
+print bigger (4, 2)
+#>>>4
+
+# Define a procedure, is_friend, that
+# takes a string as its input, and
+# returns a Boolean indicating if
+# the input string is the name of
+# a friend. Only D names
+
+def is_friend (name):
+    if name [0] == 'D':
+        return True
+    else:
+        return False
+
+print is_friend ('Diane')
+#>>>True
+
+## same as above but with D or N
+
+def is_friend (name):
+    if name[0] == 'D' or name[0] == 'N':
+        return True
+    else:
+        return False
+
+print is_friend('Diane')
+print is_friend('Nancy')
