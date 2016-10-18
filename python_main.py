@@ -181,6 +181,7 @@ def abbaize (a, b):
     return a + b * 2 + a
 
 print abbaize ('a', 'b')
+<<<<<<< HEAD
 #>>> abba
 
 #### def udacify
@@ -231,3 +232,6 @@ def is_friend (name):
 
 print is_friend('Diane')
 print is_friend('Nancy')
+=======
+#>>>abba
+>>>>>>> db4de5ab00219609f647add5db8b6db8d799e201
