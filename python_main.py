@@ -181,7 +181,7 @@ def abbaize (a, b):
     return a + b * 2 + a
 
 print abbaize ('a', 'b')
-<<<<<<< HEAD
+
 #>>> abba
 
 #### def udacify
@@ -232,6 +232,103 @@ def is_friend (name):
 
 print is_friend('Diane')
 print is_friend('Nancy')
-=======
 #>>>abba
->>>>>>> db4de5ab00219609f647add5db8b6db8d799e201
+
+# Define a procedure, biggest, that takes three
+# numbers as inputs and returns the largest of
+# those three numbers.
+
+def biggest(a,b,c):
+    if a > b:
+        if a > c:
+            return a
+        else:
+            return c
+    if b > c:
+        return b
+    else:
+        return c
+
+print biggest(101,2782,3)
+
+### another solution to above
+
+def bigger (a, b):
+    if a > b:
+        return a
+    else:
+        return b
+
+def biggest (a, b, c):
+    return bigger (bigger (a, b), c )
+
+print biggest (1343,43335,5)
+
+##### WHILE LOOPS #####
+
+i = 0
+while i < 10:
+    print i
+    i = i + 1
+#>>>>>>>> 0-9
+
+i = 0
+while i != 10:
+    i = i + 1
+    print i
+#>>> 1-10
+
+#i = 1
+#while i !=10:
+#    i = i + 2
+    #print i
+#>>>> INFINITE LOOP
+
+i = 0
+while i < 10:
+    print i
+    i = i + 1
+
+# This uses a while loop to remove all the spaces from a string of
+# text. Can you figure out how it works?
+def remove_spaces(text):
+    text_without_spaces = '' #empty string for now
+    while text != '':
+        next_character = text[0]
+        if next_character != ' ':    #that's a single space
+            text_without_spaces = text_without_spaces + next_character
+        text = text[1:]
+    return text_without_spaces
+
+print remove_spaces("hello my name is andy how are you?")
+
+# Define a procedure that takes as input a positive whole number
+# & prints out all the whole numbers from 1 to the input number
+
+def print_numbers(n):
+    i = 1
+    while i <= n:
+        print i
+        i = i + 1
+
+print_numbers(3)
+#>> 1,2,3
+
+# ^ another solution
+
+def print_numbers(n):
+    i = 0
+    while i < n:
+        i = i + 1
+        print i
+
+print_numbers(4)
+
+##### BREAK #####
+
+def print_numbers(n):
+    while True:
+        if i > n:
+            BREAK
+        print i
+        i = i + 1
