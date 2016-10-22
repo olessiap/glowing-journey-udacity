@@ -114,3 +114,30 @@ print(median(1,2,3))
 #test_string_1 = "this is a good NOUN to use when you VERB your food"
 #
 #print process_madlib(test_string_1)
+
+###### LISTS: STRUCTURED DATA #######
+
+print "EXAMPLE 2: Lists can contain numbers"
+number_list = [3.14159, 2.71828, 1.61803]
+print number_list
+#>>>[3.14159, 2.71828, 1.61803]
+
+print "EXAMPLE 3: Lists can be 'accessed' and 'sliced' like strings"
+pi = number_list[0]
+not_pi = number_list[1:]
+print pi
+print not_pi
+#>>>3.14159
+#>>>[2.71828, 1.61803]
+
+## given the variable, days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+##define procedure, how_many_days that
+## takes input a number representing a month
+## outputs the number of days in that month
+
+days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+def how_many_days(month_number):
+    return days_in_month[month_number - 1]
+
+print how_many_days(11)
