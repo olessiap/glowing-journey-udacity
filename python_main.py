@@ -332,3 +332,210 @@ def print_numbers(n):
             BREAK
         print i
         i = i + 1
+
+### from WORK SESSION 4 ###
+
+#Define a procedure weekend which takes a string as its input, and
+#returns the boolean True if it's 'Saturday' or 'Sunday' and False otherwise.
+
+def weekend(day):
+    if day == 'Saturday' or day == 'Sunday':
+        return True
+    else:
+        return False
+
+print weekend('Monday')
+print weekend('Sunday')
+
+## define procdedure, countdown that
+## takes a positive whole nubmer as input
+## and prints out a countdown from that number to 1
+## followed by Blastofff!
+
+def countdown(n):
+    while n >= 1:
+        print n
+        n = n - 1
+    print 'Blastoff!'
+
+print countdown(3)
+
+## define a procedure, median that
+## takes 3 numbers as its inputs
+## and outputs the median of the 3 numbers
+
+def bigger(a,b):
+    if a > b:
+        return a
+    else:
+        return b
+
+def biggest(a,b,c):
+    return bigger(a,bigger(b,c))
+
+def median(a,b,c):
+    big = biggest(a,b,c)
+    if big == a:
+        return bigger (b,c)
+    if big == b:
+        return bigger (a,c)
+    else:
+        return bigger (a,b)
+
+print(median(1,2,3))
+
+# Write code for the function random_noun, which takes in no inputs but outputs
+# one of two nouns randomly. Use the randint function to generate a number
+# from 0-1 and return a noun depending on whether the number is equal to 0 or 1.
+# Feel free to experiment with different nouns, but for submission purposes return
+# the string "sofa" if the number is 0, else return "llama".
+
+#from random import randit
+#
+#def random_noun():
+#    random_num = randit(0,1)
+#    if random_num == 0:
+#        return 'sofa'
+#    else:
+#        return 'llama'
+#
+##random verb madlib
+#from random import randit
+#def random_verb():
+#    random_num = randit(0,1)
+#    if random_num == 0:
+#        return 'run'
+#    else:
+#        return 'kayak'
+#
+### MADLIB PROBLEM ALL TOGETHER
+#
+#(def random_noun():
+#    random_num = randit(0,1)
+#    if random_num == 0:
+#        return 'sofa'
+#    else:
+#        return 'llama'
+
+#def random_verb():
+#    random_num = randit(0,1)
+#    if random_num == 0:
+#        return 'run'
+#    else:
+#        return 'kayak'
+#
+#def word_transformer(word):
+#    if word == 'NOUN':
+#        return random_noun()
+#    if word == 'VERB':
+#        return random_verb()
+#    else:
+#        return word[0]
+#
+#def process_madlib(mad_lib):
+#    processed = ""
+#    index = 0
+#    box_length = 4
+#    while index < len(madlib):
+#        frame = madlib[index:index + box_length]
+#        to_add = word_transformer(frame)
+#        processed += to_add
+#        if len(tp_add)==1:
+#            index +=1
+#        else:
+#            index +=4
+#        return processed
+#
+#test_string_1 = "this is a good NOUN to use when you VERB your food"
+#
+#print process_madlib(test_string_1)
+
+###### LISTS: STRUCTURED DATA #######
+
+print "EXAMPLE 2: Lists can contain numbers"
+number_list = [3.14159, 2.71828, 1.61803]
+print number_list
+#>>>[3.14159, 2.71828, 1.61803]
+
+print "EXAMPLE 3: Lists can be 'accessed' and 'sliced' like strings"
+pi = number_list[0]
+not_pi = number_list[1:]
+print pi
+print not_pi
+#>>>3.14159
+#>>>[2.71828, 1.61803]
+
+## given the variable, days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+##define procedure, how_many_days that
+## takes input a number representing a month
+## outputs the number of days in that month
+
+days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+def how_many_days(month_number):
+    return days_in_month[month_number - 1]
+
+###looking for specific value in 4th list###
+
+print how_many_days(10)
+
+beatles = [['John', 1940], ['Paul', 1942],
+            ['George', 1943], ['Ringo', 1940]]
+
+print beatles[3][1]
+#>>> 1940
+
+### LISTS: MUTATION = change the value of a list after its creation #####
+
+p = ['H', 'e', 'l', 'l', 'o']
+print p
+#>>> ['H', 'e', 'l', 'l', 'o']
+p[0] = 'Y'
+print p
+#>>> ['Y', 'e', 'l', 'l', 'o']
+p[4] = '!'
+print p
+
+###ALIASING = when 2 variables refer to the same list  ####
+
+## whats the value of agent[2] after the following code:###
+
+#spy = [0, 0, 7]
+#agent = spy
+#spy[2] = agent[2] + 1
+#>>>8
+
+spy = [0,0,7]
+
+def replace_spy(p):
+    p[2] = p[2] + 1
+
+replace_spy(spy)
+print spy
+
+### 1. LIST OPERATOR "APPEND" = adds a new element to the end of the list ###
+
+stooges = ['Moe', 'Larry', 'Curly']
+stooges.append('Shemp')
+print stooges
+#>>>['Moe', 'Larry', 'Curly', 'Shemp']
+
+### 2.LIST OPERATOR "+" = like cocatination in Strings. makes NEW LIST
+
+### 3.LIST OPERATOR "LEN(<list>)" outputs NUMBER of elements in the input
+
+## Whats the value of len(p) after this code
+
+p = [1,2]
+p.append(3)
+p = p + [4, 5]
+print len(p)
+#>>> 5
+
+p = [1, 2]
+q = [3, 4]
+p.append(q)
+print p
+#>>>[1, 2, [3, 4]]
+print len(p)
+#>>>3
