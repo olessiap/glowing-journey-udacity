@@ -642,3 +642,28 @@ def find_element(p, t):
     if t not in p:
         return -1
     return p.index(t)
+
+#BIG HOW OLD ARE YOU IN DAYS PROBLEM BROKEN DOWN#
+
+#def daysBetweenDates
+#def nextDay(year, month, day);
+#def isLeapYear(year);
+# idef daysInMonth(month);
+
+### Define a simple nextDay procedure, that assumes
+### every month has 30 days.
+
+def nextDay(year, month, day):
+    """Warning: this version incorrectly
+        assumes all months have 30 days!"""
+    if day < 30:
+        return year, month, day + 1
+    else:
+        if month < 12:
+            return year, month + 1, 1
+        else:
+            return year + 1, 1, 1
+
+print nextDay(2016, 10, 05)
+print nextDay(2016, 11, 30)
+print nextDay(2016, 12, 30)
