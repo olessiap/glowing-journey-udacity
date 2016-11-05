@@ -650,6 +650,7 @@ def find_element(p, t):
         return -1
     return p.index(t)
 
+<<<<<<< HEAD
 # Given your birthday and the current date, calculate your age
 # in days. Compensate for leap days. Assume that the birthday
 # and current date are correct dates (and no time travel).
@@ -671,6 +672,21 @@ def find_element(p, t):
 ## 1. nextDay - find next day assuming month has 30 days##
 
 def nextDay(year, month, day):
+=======
+#BIG HOW OLD ARE YOU IN DAYS PROBLEM BROKEN DOWN#
+
+#def daysBetweenDates
+#def nextDay(year, month, day);
+#def isLeapYear(year);
+# idef daysInMonth(month);
+
+### Define a simple nextDay procedure, that assumes
+### every month has 30 days.
+
+def nextDay(year, month, day):
+    """Warning: this version incorrectly
+        assumes all months have 30 days!"""
+>>>>>>> ec9968b0ccee18b4982f65ade8ccc455873e8277
     if day < 30:
         return year, month, day + 1
     else:
@@ -679,6 +695,7 @@ def nextDay(year, month, day):
         else:
             return year + 1, 1, 1
 
+<<<<<<< HEAD
 print nextDay(2016, 10, 06) #>>2016, 10, 07
 print nextDay(2016, 12, 30)
 print nextDay(2017, 12, 30)
@@ -793,3 +810,8 @@ def test():
 
     print "test finished"
 test()
+=======
+print nextDay(2016, 10, 05)
+print nextDay(2016, 11, 30)
+print nextDay(2016, 12, 30)
+>>>>>>> ec9968b0ccee18b4982f65ade8ccc455873e8277
