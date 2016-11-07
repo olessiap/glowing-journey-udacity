@@ -650,7 +650,6 @@ def find_element(p, t):
         return -1
     return p.index(t)
 
-<<<<<<< HEAD
 # Given your birthday and the current date, calculate your age
 # in days. Compensate for leap days. Assume that the birthday
 # and current date are correct dates (and no time travel).
@@ -671,8 +670,7 @@ def find_element(p, t):
 
 ## 1. nextDay - find next day assuming month has 30 days##
 
-def nextDay(year, month, day):
-=======
+
 #BIG HOW OLD ARE YOU IN DAYS PROBLEM BROKEN DOWN#
 
 #def daysBetweenDates
@@ -686,7 +684,6 @@ def nextDay(year, month, day):
 def nextDay(year, month, day):
     """Warning: this version incorrectly
         assumes all months have 30 days!"""
->>>>>>> ec9968b0ccee18b4982f65ade8ccc455873e8277
     if day < 30:
         return year, month, day + 1
     else:
@@ -695,7 +692,7 @@ def nextDay(year, month, day):
         else:
             return year + 1, 1, 1
 
-<<<<<<< HEAD
+
 print nextDay(2016, 10, 06) #>>2016, 10, 07
 print nextDay(2016, 12, 30)
 print nextDay(2017, 12, 30)
@@ -806,12 +803,52 @@ def test():
     assert nextDay (2012, 2, 28) == (2012, 2, 29)
     assert daysBetweenDates(2012, 2, 28, 2012, 2, 29) == 1
     assert daysBetweenDates(2012, 1, 1, 2013, 1, 1) == 366
-    assert daysBetweenDates(2013, 1, 1, 2014, 1, 1) == 365
+
 
     print "test finished"
 test()
-=======
-print nextDay(2016, 10, 05)
-print nextDay(2016, 11, 30)
-print nextDay(2016, 12, 30)
->>>>>>> ec9968b0ccee18b4982f65ade8ccc455873e8277
+
+print daysBetweenDates(1990, 10, 6, 2016, 11, 5)
+
+
+# STAGE 2: WORK SESSION 5##
+
+# list practice
+
+list1 = [1,2,3,4]
+list2 = [1,2,3,4]
+
+list1 = list1 + [5, 6] #> [1,2,3,4,5,6]
+list2.append([5, 6]) #>[1,2,3,4[5,6]]
+
+#use a while loop to populate a list of 20 random integers.#
+
+# Generate a random integer between 0 and 10
+# Add this random integer to our list
+# Do we have a list of length 20 yet?
+# If not, we loop back up and go through steps 1 to 3 again while length of the list is less than 20
+
+import random
+
+random_list = []
+list_length = 20
+
+while len(random_list) < list_length:
+    random_list.append(random.randint(0,10))
+
+print random_list
+#>>[2, 4, 0, 5, 10, 6, 2, 5, 1, 10, 10, 5, 1, 0, 1, 3, 9, 1, 1, 4]
+
+#alternative solution #
+import random
+
+random_list = []
+list_length = 20
+count = 0
+
+while count < list_length:
+    random_list.append(random.randint(0,10))
+    count += 1
+
+print random_list
+#[3, 7, 8, 10, 8, 3, 4, 10, 6, 6, 7, 2, 5, 6, 9, 10, 9, 2, 4, 3]
