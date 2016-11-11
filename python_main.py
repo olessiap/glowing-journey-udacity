@@ -852,3 +852,27 @@ while count < list_length:
 
 print random_list
 #[3, 7, 8, 10, 8, 3, 4, 10, 6, 6, 7, 2, 5, 6, 9, 10, 9, 2, 4, 3]
+
+
+# count how many times the number 9 is in a list of 20 random numbers #
+
+#1. Loop through each element in the list
+#2. If the element is 9, we increase our count by 1
+#3. Are we at the end of the list yet?
+#4. If not, we loop back up and go through steps 1 to 3 again while we are still going through the list
+
+import random
+
+random_list[]
+list_length = 20
+
+while len(random_list) < list_length:
+    random_list.append(random.randint(0,10))
+
+index = 0
+count = 0
+
+while index < len(random_list):
+    if random_list[index] == 9:
+        count = count + 1
+    index = index + 1
