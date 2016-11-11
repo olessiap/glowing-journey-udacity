@@ -863,7 +863,7 @@ print random_list
 
 import random
 
-random_list[]
+random_list = []
 list_length = 20
 
 while len(random_list) < list_length:
@@ -876,3 +876,60 @@ while index < len(random_list):
     if random_list[index] == 9:
         count = count + 1
     index = index + 1
+
+#list that contains the counts of all occurrances of every number
+#seen in the randomly generated list.
+
+# store the list of length 11 with 0s filled in
+#use this list to store count of numbers 0-10.
+#Target number is the index of the list
+#1. loop through each element in the list
+#2. get current number in the list
+#3. increment curent count for this number by 1
+count_list = [1,2,3,2,2,1,1,2,3,1,2]
+import random
+
+random_list = []
+list_length = 20
+
+while len(random_list) < list_length:
+    random_list.append(random.randint(0,10))
+
+count_list = [0] * 11
+index = 0
+count = 0
+
+while index < len(random_list): #1
+    number = random_list[index] #2
+    count_list[number] = count_list[number] + 1 #3
+    index = index +1
+
+
+print count_list
+#print sum(count_list) #20
+
+## now print it like a table with header "Number | Occurance"
+
+count_list = [1,2,3,2,2,1,1,2,3,1,2]
+import random
+
+random_list = []
+list_length = 20
+
+while len(random_list) < list_length:
+    random_list.append(random.randint(0,10))
+
+count_list = [0] * 11
+index = 0
+count = 0
+
+print "Number | Occurance"
+
+while index < len(random_list): #1
+    number = random_list[index] #2
+    count_list[number] = count_list[number] + 1 #3
+    print number + " " + index
+    index = index +1
+
+
+print count_list
