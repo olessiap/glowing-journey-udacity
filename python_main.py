@@ -821,7 +821,7 @@ list2 = [1,2,3,4]
 list1 = list1 + [5, 6] #> [1,2,3,4,5,6]
 list2.append([5, 6]) #>[1,2,3,4[5,6]]
 
-#use a while loop to populate a list of 20 random integers.#
+#use a while loop to populate a list of 20 random integers.# //changed to 3 with print statements
 
 # Generate a random integer between 0 and 10
 # Add this random integer to our list
@@ -831,30 +831,32 @@ list2.append([5, 6]) #>[1,2,3,4[5,6]]
 import random
 
 random_list = []
-list_length = 20
+list_length = 3
 
 while len(random_list) < list_length:
-    random_list.append(random.randint(0,10))
+    print "searching for " + str(random_list) + " in " + str(list_length)
+    print "looping for the number " + str(random_list)
+    random_list.append(random.randint(0,3))
 
 print random_list
 #>>[2, 4, 0, 5, 10, 6, 2, 5, 1, 10, 10, 5, 1, 0, 1, 3, 9, 1, 1, 4]
 
-#alternative solution #
-import random
-
-random_list = []
-list_length = 20
-count = 0
-
-while count < list_length:
-    random_list.append(random.randint(0,10))
-    count += 1
-
-print random_list
-#[3, 7, 8, 10, 8, 3, 4, 10, 6, 6, 7, 2, 5, 6, 9, 10, 9, 2, 4, 3]
-
-
-# count how many times the number 9 is in a list of 20 random numbers #
+# #alternative solution #
+# import random
+#
+# random_list = []
+# list_length = 20
+# count = 0
+#
+# while count < list_length:
+#     random_list.append(random.randint(0,10))
+#     count += 1
+#
+# print random_list
+# #[3, 7, 8, 10, 8, 3, 4, 10, 6, 6, 7, 2, 5, 6, 9, 10, 9, 2, 4, 3]
+#
+#
+# # count how many times the number 9 is in a list of 20 random numbers #
 
 #1. Loop through each element in the list
 #2. If the element is 9, we increase our count by 1
@@ -910,7 +912,6 @@ print count_list
 
 ## now print it like a table with header "Number | Occurance"
 
-count_list = [1,2,3,2,2,1,1,2,3,1,2]
 import random
 
 random_list = []
@@ -921,15 +922,106 @@ while len(random_list) < list_length:
 
 count_list = [0] * 11
 index = 0
-count = 0
 
-print "Number | Occurance"
+while index < len(random_list):
+    number = random_list[index]
+    count_list[number] = count_list[number] + 1
+    index = index + 1
 
-while index < len(random_list): #1
-    number = random_list[index] #2
-    count_list[number] = count_list[number] + 1 #3
-    print number + " " + index
-    index = index +1
+print "number | occurrence"
+index = 0
+num_len = len("number")
 
+while index < len(count_list):
+  num_spaces = num_len - len(str(index))
+  print " " * num_spaces + str(index) + " | " + str(count_list[index])
+  index = index + 1
 
-print count_list
+##
+
+def product_list(p):
+    total = 1
+    for i in p:
+        total = total * i
+    return total
+
+print product_list([1,2])
+#> 1
+
+# Define a procedure, greatest,
+# that takes as input a list
+# of positive numbers, and
+# returns the greatest number
+# in that list. If the input
+# list is empty, the output
+# should be 0.
+
+def greatest(list_of_numbers):
+    big = 0
+    for i in list_of_numbers:
+        #print "searching for " + str(big) + " in " + str(list_of_numbers)
+        #print "looping for the number " + str(big)
+        if big < i:
+            big = i
+    return big
+
+print greatest([1,2])
+#>2
+
+##SPLIT - turns words in a string into a list of those words ###
+## string1.split()
+
+#Write code for the
+# function word_in_pos (meaning word in parts_of_speech), which takes in a string
+# word and a list parts_of_speech as inputs. If there is a word in parts_of_speech
+# that is a substring of the variable word, then return that word in parts_of_speech,
+# else return None.
+
+def word_in_pos(word, parts_of_speech):
+    for pos in parts_of_speech:
+        print "searching for " + str(pos) + " in " + str(word)
+        print "looping for this word " + str(word)
+        if pos in word:
+            return pos
+        return None
+
+test_cases = ["NOUN", "FALSE", "<<@PERSON><", "PLURALNOUN"]
+parts_of_speech = ["PERSON", "PLURALNOUN", "NOUN"]
+
+print word_in_pos(test_cases[0], parts_of_speech) #>None
+print word_in_pos(test_cases[1], parts_of_speech) #>None
+print word_in_pos(test_cases[2], parts_of_speech) #>PERSON
+print word_in_pos(test_cases[3], parts_of_speech) #>None
+
+# Write code for the function play_game, which takes in as inputs parts_of_speech
+# (a list of acceptable replacement words) and ml_string (a string that
+# can contain replacement words that are found in parts_of_speech). Your play_game
+# function should return the joined list replaced, which will have the same structure
+# as ml_string, only that replacement words are swapped out with "corgi", since this
+# program cannot replace those words with user input.
+
+parts_of_speech  = ["PLACE", "PERSON", "PLURALNOUN", "NOUN"]
+
+test_string = """This is PLACE, no NOUN named PERSON, We have so many PLURALNOUN around here."""
+
+def word_in_pos(word, parts_of_speech):
+    for pos in parts_of_speech:
+        if pos in word:
+            return pos
+    return None
+
+def play_game(ml_string, parts_of_speech):
+    replaced = []
+    ml_string = ml_string.split()
+    for word in ml_string:
+        replacement = word_in_pos(word, parts_of_speech)
+        if replacement != None:
+            #user_input = raw_input("Type in a " + replacement + " ")
+            word = word.replace(replacement, "Corgi") # or user_input
+            replaced.append(word)
+        else:
+            replaced.append(word)
+    replaced = " ".join(replaced)
+    return replaced
+
+print play_game(test_string, parts_of_speech)
