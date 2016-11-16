@@ -1,82 +1,84 @@
-e_p = "__1__ & __2__"
+fun_facts = "w1 w2 __1__ __2__"
+random_facts = "ww1 __1__ ww2 __3__ ww3"
+serious_facts = " "
 
-e_a = ["ea1", "ea2" ]
+fun_answers = ["ea1", "ea2", "ea3"]
+random_answers = ["ma1", "ma2", "ma3"]
+serious_answers = []
 
-bq = ["__1__", "__2__"]
+blank_questions = ["__1__", "__2__", "__3__", "__4__", "__5__"]
 
 def play_game():
-    user_choice = raw_input("pick level from easy or medium: ")
-    if user_choice == 'easy':
-        process(e_p, e_a, bq)
+    user_choice = raw_input("Which cat facts do you want to answer? Pick either fun, random, or serious: ")
+    if user_choice == "fun":
+        process(fun_facts, fun_answers, blank_questions)
+    elif user_choice == "random":
+        process(random_facts, random_answers, blank_questions)
+    elif user_choice == "serious":
+        process(serious_facts, serious_answers, blank_questions)
     else:
         play_game()
+        print "Meow you know all the cat facts, congrats!"
 
-def process(paragraph, answers, questions):
-    print paragraph #//__1__ & __2__
-    replaced = []
-    paragraph = paragraph.split() #waswrong after index
-    index = 0 #was wrong
-    for word in paragraph:
-        if index < len(answers):
-            if questions[index] in word:
-                user_input = raw_input("what are you answering? " + str(index + 1) + ":") #waswrong
-                if user_input == answers[index]:
-                    paragraph = " ".join(paragraph) #makes paragraph string again
-                    paragraph = paragraph.replace(word, user_input) #replaces word for user_input
-                    index += 1 #waswrong
-                    print paragraph
-                    paragraph = paragraph.split() #splits it again for round2 and on
-                else:
-                    print "Incorrect, try again"
+
+def process(fact, answers, questions): #sets up
+    print fact #prints fact with all the blanks
+    replaced = [] #create a list to re-build the fact with
+    fact = fact.split() #split fact into a list
+    index = 0 # keeps track of items in the answer list and blank list
+    for word in fact: #goes through each word in the fact starting at index 0 and checks whether it is a blank space
+        if index < len(answers): #limits index to the number of answers in the answer list
+            if questions[index] in word: #finds the question number in the fact
+                tries = 5 #sets limit to number of guesses
+                while tries >= 0: #allows user to try until runs out of tries
+                    user_input = raw_input("Enter the answer to number " + str(index + 1) + ": ") # asks user to answer question number
+                    if user_input == answers[index]: #if the user response equals the correct answer in the answer list
+                        fact = " ".join(fact) #joins the list fact together
+                        fact = fact.replace(word, user_input) #replaces word with user_input in fact
+                        replaced.append(user_input) #adds user_input to the replaced list
+                        index += 1 #adds 1 to index to move to the next answer/question
+                        tries = -1 # resets number of tries to set up for next question
+                        print fact #prints fact / replaces blank question with user answer
+                        fact = fact.split() # splits the fact to set up for next question
+                    else:
+                        print "WRONG, Try again"
+                        print "You have " + str(tries) + " tries left."
+                        tries = tries - 1 #subracts number of tries by 1
             else:
-                replaced.append(word) #waswrongly indented outside of l21 // adds word to replaced list
-    replaced = " ".join(replaced) # makes list into a string
-    return replaced #SOMETHING WRONG HERE! http://www.pythontutor.com/live.html#mode=edit
+                replaced.append(word) #adds word to replaced list
+    replaced = " ".join(replaced) #joins the replaced list together
+    return replaced
 
 play_game()
 
 
-            #replaced.append(word)
-
-#user_input = ea1
-#printed: __1__ & two --> ae1 --> ae1 & two
-#paragraph = ["__1__" "&" "two"]
-#answer = 0:ea1
-#bq = 0:__1__
-#index = 0
-#replaced = ae1 & 2
-#word = 0:__1__
 
 
-#set up easy paragraph
+#set up easy fact
 #set up easy answers
-#set up bq
+#set up fill in the blanks
 #set up level rules(play_game)
 #ask user which level
 #if user picks easy, go through easy level
 #based on level go through process
-##print chosen paragraph
-#set up empty list to hold developing paragraphs
+##print chosen fact
+#set up empty list to hold developing facts
 #set index to 0 to keep track of the items in the answer list
-#break up the paragraph into a list
-#identify 1st word in paragraph
-#while index is <= to # of answers -> run through list of words in paragraph
-# if 1st word in paragraph = 1st question
+#break up the fact into a list
+#identify 1st word in fact
+#while index is <= to # of answers -> run through list of words in fact
+# if 1st word in fact = 1st question
 # ask user to answer q1
 # if user_input1 = answer1(index)
-# make paragraph a string again
-# replace 1st word in paragraph with user_input1
+# make fact a string again
+# replace 1st word in fact with user_input1
 # add 1 to index
-# print paragraph with user_input instead of word
-# make paragraph a list again
+# print fact with user_input instead of word
+# make fact a list again
 #if user_input1 is wrong
 #print "wrong, try again" (need to add tries)
 
-
-#if 1st word in paragraph not in 1st question:
-# add 1st word to replaced list
-## print "now move on to 2nd word in paragraph"
-
-# move on to 2nd word in paragraph
-# if 2nd word in paragraph does NOT = 2nd question
-# add 2nd word in paragraph to replaced list
+#TODOLIST
+#add tries
+#add possible format answers to play_game
+#add else statement that says "didn't get that try again" and asks the question again
