@@ -1025,3 +1025,29 @@ def play_game(ml_string, parts_of_speech):
     return replaced
 
 print play_game(test_string, parts_of_speech)
+
+################################################################################
+###################   STAGE 3: CREATE A MOVIE SITE    ##########################
+################################################################################
+
+###take a break###
+
+import time
+import webbrowser
+
+total_breaks = 3
+break_count = 0
+
+print "break started at " + time.ctime()
+while break_count < total_breaks:
+    time.sleep(3)
+    webbrowser.open("https://www.youtube.com/watch?v=Ly7uj0JwgKg")
+    break_count += 1
+
+## Renaming files in your computer ###
+# 1. access the files
+# 2. for each file, rename the files
+def rename_files() [/Users/olessiapotapova/Desktop/prank]
+
+for f in /Users/olessiapotapova/Desktop/prank:
+    rename f
