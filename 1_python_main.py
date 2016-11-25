@@ -1065,3 +1065,8 @@ print rename_files()
 
 
 #####TURTLE GAME#######
+
+###SEND A TEXT MESSAGE###
+
+###Class -user-defined prototype of an object that defines a set of attributes
+### that characterize any object of the class (a blueprint of an object) 
