@@ -1032,22 +1032,36 @@ print play_game(test_string, parts_of_speech)
 
 ###take a break###
 
-import time
-import webbrowser
+# import time
+# import webbrowser
+#
+# total_breaks = 3
+# break_count = 0
+#
+# print "break started at " + time.ctime()
+# while break_count < total_breaks:
+#     time.sleep(3)
+#     webbrowser.open("https://www.youtube.com/watch?v=Ly7uj0JwgKg")
+#     break_count += 1
 
-total_breaks = 3
-break_count = 0
-
-print "break started at " + time.ctime()
-while break_count < total_breaks:
-    time.sleep(3)
-    webbrowser.open("https://www.youtube.com/watch?v=Ly7uj0JwgKg")
-    break_count += 1
 
 ## Renaming files in your computer ###
 # 1. access the files
 # 2. for each file, rename the files
-def rename_files() [/Users/olessiapotapova/Desktop/prank]
+import os
+def rename_files():
+    file_list = os.listdir("/Users/olessiapotapova/Desktop/prank")#1. get file names from a folder
+    print file_list
+    #2. for each file, rename filename
+    saved_path = os.getcwd() #see what the current working directory is
+    print("current working directory is " + saved_path)
+    os.chdir("/Users/olessiapotapova/Desktop/prank")#change directory to point to the folder with images
+    for file_name in file_list:#go throught each file in the list
+        print("old name - " + file_name)
+        os.rename(file_name, file_name.translate(None, "0123456789")) #rename each file & take out the numbers
+        print ("new name - " + file_name.translate(None, "0123456789"))
+    os.chdir(saved_path) #change path back to how it was
+print rename_files()
 
-for f in /Users/olessiapotapova/Desktop/prank:
-    rename f
+
+#####TURTLE GAME#######
