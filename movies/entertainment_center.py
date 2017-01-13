@@ -1,3 +1,4 @@
+import fresh_tomatoes
 import media
 
 ivan_movie = media.Movie("Ivan Vasilievich: Back to the Future","Ivan the terrible travels to the future",
@@ -21,12 +22,12 @@ nineth_company_movie = media.Movie("9th company", "Russian boys become soldiers 
                          "https://www.youtube.com/watch?v=TcHD9VEQ7C8")
 
 nightwatch_movie = media.Movie("Nightwatch", "Supernatural beings fight to protect their realms",
-                         "https://en.wikipedia.org/wiki/File:Night_Watch_(2004_film)_theatrical_poster.jpg",
+                         "http://images.moviepostershop.com/night-watch-movie-poster-2004-1010262173.jpg",
                          "https://www.youtube.com/watch?v=xDPLZW8MBW8")
 
 
 
 #print toy_story.storyline
 #print moscow_movie.storyline
-
-nightwatch_movie.show_trailer()
+movies = [ivan_movie, moscow_movie, fate_movie, brother_movie, nineth_company_movie, nightwatch_movie]
+fresh_tomatoes.open_movies_page(movies)
