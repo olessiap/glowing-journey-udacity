@@ -30,4 +30,6 @@ nightwatch_movie = media.Movie("Nightwatch", "Supernatural beings fight to prote
 #print toy_story.storyline
 #print moscow_movie.storyline
 movies = [ivan_movie, moscow_movie, fate_movie, brother_movie, nineth_company_movie, nightwatch_movie]
-fresh_tomatoes.open_movies_page(movies)
+#fresh_tomatoes.open_movies_page(movies)
+print(media.Movie.VALID_RATINGS) # prints the 4 ratings class variables
+print(media.Movie.__module__)
